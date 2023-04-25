@@ -1,13 +1,9 @@
 <?php
-    session_start();
-
-    require('functions.php');
-
+require 'required.php';
+    $totalQty= $qtty['totalQty'];
     if(isset($_SESSION['msg'])) {
         echo "";
     }
-    
-    
 ?>
 
 <!DOCTYPE html>
@@ -25,48 +21,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Appli</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recap.php">Récapitulatif</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto me-3">
-                    <li class="nav-item">
-
-                        <a type="button" class="btn btn-light position-relative" href="recap.php">
-                            <i class="bi bi-cart-fill"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                                <?php
-                                if(isset($_SESSION['products'])) {
-                                    echo count($_SESSION['products']);
-                                } else {
-                                    echo '0';
-                                }
-                                ?>
-                                <span class="visually-hidden">Articles dans le panier</span>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php include 'nav.php' ?>
     <div class="container">
         <h1 class="text-center">Ajout produit</h1>
-        <form action="traitement.php" method="post" class="text-center mt-5">
+        <form action="actions.php" method="post" class="text-center mt-5">
             <p>
                 <label class="form-label">Nom du produit :
                     <input type="text" class="form-control" name="name">
@@ -122,6 +80,7 @@
     <script>
         var myModal = new bootstrap.Modal(document.getElementById('myModal'))
     </script>
+    <script src="cart.js"></script>
 </body>
 
 </html>

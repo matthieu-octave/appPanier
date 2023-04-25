@@ -1,6 +1,6 @@
 <?php
 
-function connexion() {
+function dbConnect() {
     $options = [
         \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
         \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
@@ -16,29 +16,76 @@ function connexion() {
 }
 
 function findAll() {  
-    $reponse = connexion()->query("SELECT * FROM product");
-	return $reponse -> fetchAll();
+    $response = dbConnect()->query("SELECT * FROM products");
+	return $response -> fetchAll();
 }
 
 function findOneById($id) {
-    $reponse = connexion()->prepare("SELECT * FROM product WHERE id=:id");
-    $reponse->bindParam("id", $id, PDO::PARAM_INT);
-    $reponse->execute();
-	return $reponse -> fetch(PDO::FETCH_ASSOC);
+    $response = dbConnect()->prepare("SELECT * FROM products WHERE id=:id");
+    $response->bindParam(":id", $id, PDO::PARAM_INT);
+    $response->execute();
+	return $response -> fetch(PDO::FETCH_ASSOC);
 }
 
 function insertProduct($name, $descr, $price) {
-    $conn = connexion();
-    $requete= $conn-> prepare("INSERT INTO product 
+    $conn = dbConnect();
+    $stmt= $conn-> prepare("INSERT INTO products 
                                         (name, description, price) 
                                         VALUES 
                                         (:name, :descr, :price)");
                 
-    $requete->bindParam(':name', $name, PDO::PARAM_STR);
-    $requete->bindParam(':descr', $descr, PDO::PARAM_STR);
-    $requete->bindParam(':price', $price, PDO::PARAM_STR);
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->bindParam(':descr', $descr, PDO::PARAM_STR);
+    $stmt->bindParam(':price', $price, PDO::PARAM_STR);
     
-    $requete->execute();
+    $stmt->execute();
     
     return $conn->lastInsertId();
+}
+
+function cartDisplay() {
+    $stmt = dbConnect()->prepare("SELECT * FROM carts");
+    $stmt->execute();
+	return $stmt -> fetchAll();
+}
+
+function cartQty() {
+    $stmt = dbConnect()->prepare("SELECT sum(quantity) as totalQty FROM carts");
+    $stmt->execute();
+	return $stmt -> fetch();
+}
+
+function addToCart($id) {
+    $product = findOneById($id);
+    $product_name = $product['name'];
+    $price = $product['price'];
+    $quantity = 1;
+    $row_total = $price * $quantity;
+
+    $stmt= dbConnect()-> prepare("INSERT INTO carts 
+                                        (cart_id, product_id, product_name, price, quantity, row_total) 
+                                        VALUES 
+                                        (:cart_id, :product_id, :product_name, :price, :quantity, :row_total)");
+    $stmt->bindParam(":cart_id", $_SESSION['cartId'], PDO::PARAM_INT);
+    $stmt->bindParam(":product_id", $id, PDO::PARAM_INT);
+    $stmt->bindParam(':product_name', $product_name, PDO::PARAM_STR);
+    $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+    $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+    $stmt->bindParam(':row_total', $row_total, PDO::PARAM_STR);
+    
+    $stmt->execute();
+    return $stmt;
+}
+
+function delOneOfCart($id) {
+    $stmt = dbConnect()->prepare("DELETE FROM carts WHERE id=:id");
+    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+	return true;
+}
+
+function clearCart() {
+    $stmt = dbConnect()->prepare("DELETE FROM carts");
+    $stmt->execute();
+	return true;
 }
