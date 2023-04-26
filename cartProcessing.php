@@ -17,8 +17,7 @@ $productPrice = $unitPriceStmt->fetch();
 $productPrice = $productPrice['price'];
 
 
-if($action == 'moins'){
-    $productPrice = -$productPrice;
+if($action == 'minus'){
     $newQty = $currentQty - 1;
 }else{
     $newQty = $currentQty + 1;
