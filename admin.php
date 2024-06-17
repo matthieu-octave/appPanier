@@ -23,24 +23,38 @@ require 'required.php';
 <?php include 'nav.php' ?>
     <div class="container">
         <h1 class="text-center">Ajout produit</h1>
-        <form action="actions.php" method="post" class="text-center mt-5">
+        <form action="actions.php" method="post" class="text-center mt-5 border-primary-subtle" data-bs-theme="dark">
             <p>
-                <label class="form-label">Nom du produit :
-                    <input type="text" class="form-control" name="name">
+                <label class="form-label w-100">Nom du produit :
+                    <input type="text" class="form-control bg-transparent text-dark" name="name">
+                </label>
+            </p>
+
+            <p>
+                <label class="form-label w-100">Nom de l'image :
+                    <input type="text" class="form-control bg-transparent text-dark" name="image_name">
+                </label>
+            </p>
+
+            <p>
+            <label for="formFile" class="form-label w-100">Choisissez une image (jpg, png)
+                <input class="form-control bg-light text-dark" type="file" id="formFile" name="image_path">
+            </label>
+            </p>
+            
+            <p>
+                <label class="form-label w-100">Prix du produit :
+                    <input type="number" class="form-control bg-transparent text-dark" step="any" name="price">
+                </label>
+            </p>
+
+            <p>
+                <label class="form-label w-100">Description :
+                    <textarea class="form-control bg-transparent text-dark" name="descr" rows="3"></textarea>
                 </label>
             </p>
             <p>
-                <label class="form-label">Prix du produit :
-                    <input type="number" class="form-control" step="any" name="price">
-                </label>
-            </p>
-            <p>
-                <label class="form-label">Description :
-                    <textarea class="form-control" name="descr" rows="3"></textarea>
-                </label>
-            </p>
-            <p>
-                <input type="submit" class="btn btn-outline-dark" name="submit" value="Ajouter le produit">
+                <input type="submit" class="btn bg-primary-subtle text-light" name="submit" value="Ajouter le produit" data-bs-theme="dark">
             </p>
         </form>
     </div>
@@ -52,7 +66,7 @@ require 'required.php';
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Yop !</h5>
+                            <h5 class="modal-title">Message</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

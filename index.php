@@ -30,7 +30,7 @@ $products = findAll();
             ?>
         </h3>
         <?php
-        $row_cols = '<div class="row row-cols-1 row-cols-md-3 p-3">';
+        $row_cols = '<div class="row row-cols-1 row-cols-lg-3 p-3">';
         $counter = 0;
         ?>
         <?php foreach ($products as $res) {
@@ -47,17 +47,17 @@ $products = findAll();
                 echo $break ? $row_cols : "";
             }
         ?>
-            <div class="col">
-                <div class="card h-100 border-primary-subtle bg-transparent pt-3" data-bs-theme="dark">
+            <div class="col mb-3">
+                <div class="card h-100 border border-primary-bg-subtle bg-transparent pt-3" data-bs-theme="dark">
                     <img src="<?= $res['image_path'] ?>" class="card-img-top mx-auto" alt="<?= $res['name'] ?>" style="height: 12vw; width: auto">
-                    <div class="card-body border-primary-subtle"  >
+                    <div class="card-body border border-primary-bg-subtle"  >
                         <a href="product.php?product=<?= $res['id'] ?>">
                             <h5 class="card-title text-capitalize text-secondary" style="text-decoration: underline; text-decoration-color: white;"><?= strtolower($res['name']) ?></h5>
                         </a>
                         <p class="card-text text-dark"><?= mb_strimwidth($res['description'], 0, 50, "..."); ?></p>
                         </p>
                     </div>
-                    <div class="card-footer text-center text-light border-primary-subtle bg-primary-subtle" data-bs-theme="dark">
+                    <div class="card-footer text-center text-light border border-primary-bg-subtle bg-primary-subtle" data-bs-theme="dark">
                     <p class="card-text fw-bold text-end h1 pb-3"><?= number_format($res['price'], 2, ",", "&nbsp;") . "&nbsp;€" ?></p>
                         <a href="actions.php?action=addCart&id=<?= $res['id'] ?>" type="button" class="btn btn-outline-light">Ajouter au panier</a>
                     </div>

@@ -28,19 +28,18 @@ $totalQty = $qtty['totalQty'];
         <h1 class="text-center"><?= $product['name'] ?></h1>
         <div class="row mt-5">
             <div class="col-12">
-                <div class="card">
+                <div class="card border border-primary-bg-subtle bg-transparent" data-bs-theme="dark">">
                     <div class="row">
-                        <div class="col-6 offset-3">
-                            <img src="<?= $product['image_path'] ?>" class="card-img-top" alt="<?= $product['name'] ?>">
+                        <div class="col-6 offset-3 text-center">
+                            <img src="<?= $product['image_path'] ?>" class="card-img-top" alt="<?= $product['name'] ?>" style="height: 30vh; width: auto">
                         </div>
                     </div>
                 
-                    <div class="card-body">
-                        <h5 class="card-title display-2"><?= $product['name'] ?></h5>
+                    <div class="card-body text-center text-dark">
+                        <h5 class="card-title display-2 text-primary-bg-subtle" data-bs-theme="dark"><?= $product['name'] ?></h5>
                         <p class="card-text"><?= $product['description'] ?></p>
-                        <p class="card-text h2 text-danger"><?= number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€" ?></p>
                     </div>
-                    <div class="card-footer text-center">
+                    <div class="card-footer text-center" data-bs-theme="dark">
                         <a href="actions.php?action=addCart&id=<?= $product['id'] ?>" type="button" class="btn btn-outline-dark">Ajouter au panier</a>
                     </div>
                 </div>

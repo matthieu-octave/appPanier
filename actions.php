@@ -6,17 +6,35 @@ if(isset($_POST['submit'])) {
     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $descr = filter_input(INPUT_POST, "descr", FILTER_DEFAULT);
+    $image = $_FILES['image_path'];
+    $image_name = filter_input(INPUT_POST, "image_name", FILTER_DEFAULT);
 
-    if($name && $price && $descr) {
-        $lastId = insertProduct($name, $descr, $price);
-        echo $lastId;
-        $_SESSION['msg'] = "Produit ajouté !";
-        header("Location:admin.php");
-        die;
+    if(isset($_FILES['image_path']) && $_FILES['image_path'] != NULL  && $_POST['name'] != NULL) {
+        $path = "../uploads"; 
+        $extensions_valides = array('jpg', 'JPG', 'png', 'PNG'); 
+        $extension_upload = substr(strrchr($_FILES['photo']['name'],'.'),1);
+        
+        if(in_array($extension_upload, $extensions_valides)) {  // l'extension est ok 
+            $image_name = $image_name.'.'.$extension_upload;
+            $path = $path."/".$image_name;       
+            $resultat = move_uploaded_file($_FILES['photo']['tmp_name'], $path);  // on envoie le fichier
+
+            if($name && $price && $descr && $image && $image_name) {
+                $lastId = insertProduct($name, $descr, $image, $image_name, $price);
+                echo $lastId;
+                $_SESSION['msg'] = "Produit ajouté !";
+                header("Location:admin.php");
+                die;
+            } else {
+                $_SESSION['msg'] = "Formulaire mal rempli !";
+            }
+        } else {
+            $_SESSION['msg'] = "Extension non valide !";
+        }
     } else {
-        $_SESSION['msg'] = "Formulaire mal rempli !";
+        $_SESSION['msg'] = "Un probleme s'est produit.";
     }
-
+    header("Location:admin.php");
 } 
 
 else if (isset($_GET['action'])){

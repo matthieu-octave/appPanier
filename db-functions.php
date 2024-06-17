@@ -40,7 +40,7 @@ function insertProduct($name, $descr, $image, $price) {
                 
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
     $stmt->bindParam(':descr', $descr, PDO::PARAM_STR);
-    $stmt->bindParam(':descr', $image, PDO::PARAM_STR);
+    $stmt->bindParam(':image', $image, PDO::PARAM_STR);
     $stmt->bindParam(':price', $price, PDO::PARAM_STR);
     
     $stmt->execute();

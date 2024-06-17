@@ -45,24 +45,25 @@
                 "</thead>",
                 "<tbody>";
             $grandTotal = 0; 
-
+            $itemNb = 1;
             foreach($carts as $cart) {
 
                 echo "<tr>",
-                        "<td>".$cart['id']."</td>",
+                        "<td>".$itemNb."</td>",
                         "<td>".$cart['product_name']."</td>",
                         "<td>".number_format($cart['price'], 2, ",", "&nbsp;")."&nbsp;€</td>";
 ?>
-                        <td><button type='button' onclick='updateQuantity("minus", <?=$cart["product_id"]?>, <?=$cart["id"]?>)' class='btn btn btn-outline-dark me-2'>-</button>
+                        <td><button type='button' onclick='updateQuantity("minus", <?=$cart["product_id"]?>, <?=$cart["id"]?>)' class='btn bg-primary-subtle text-light me-2' data-bs-theme="dark">-</button>
 <?php
                         echo '<input type="text" id="cartRow'.$cart['id'].'" value="'.$cart['quantity'].'" class="priceInput" readonly>';
                         ?>
-                        <button type='button' onclick='updateQuantity("plus", <?=$cart["product_id"]?>, <?=$cart["id"]?>)' class='btn btn btn-outline-dark ms-2'>+</button></td>
+                        <button type='button' onclick='updateQuantity("plus", <?=$cart["product_id"]?>, <?=$cart["id"]?>)' class='btn bg-primary-subtle text-light ms-2' data-bs-theme="dark">+</button></td>
 <?php echo
                         "<td class='text-end' id='rowTotal".$cart['id']."'>".number_format($cart['row_total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         '<td><a type="button" href="actions.php?action=del&id='.$cart['id'].'" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a></td>',
                         "</tr>";
             $grandTotal += $cart['row_total'];
+            $itemNb++;
             }
 
             echo "<tr>",
@@ -78,7 +79,13 @@
 
         </div>
                 <div class="row mt-5 text-center">
-                    <a type="button" href="actions.php?action=clear" class="btn btn-danger">Vider le panier</a>
+                    <div class="col">
+                        <a type="button" href="actions.php?action=clear" class="btn bg-primary-subtle text-light w-100" data-bs-theme="dark">Vider le panier</a>
+                    </div>
+                    <div class="col">
+                        <a type="button" href="actions.php?action=clear" class="btn btn-success w-100" data-bs-theme="dark">Payer</a>
+                    </div>
+                    
                 </div>
         </div>
     </div>
