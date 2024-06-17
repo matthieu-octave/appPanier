@@ -1,0 +1,391 @@
+{
+	"article": [
+		{
+			"libelle": "COMPLET BIO",
+			"annulation": "N",
+			"quantite": 3,
+			"brut": 2.45,
+			"net": 7.35,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "PIZZA",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 2.2,
+			"net": 4.4,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "FOUGASSE GROTILLONS PATE A PAIN",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.7,
+			"net": 2.7,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		},
+		{
+			"libelle": "SUISSE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.8,
+			"net": 2.8,
+			"groupe": "VIENNOISERIE",
+			"famille": "VIENNOISERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "PEPSI COLA 50CL",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.5,
+			"net": 2.5,
+			"groupe": "BOISSON",
+			"famille": "BOISSON",
+			"hca": "N"
+		},
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1,
+			"net": 1,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	
+	"article": [
+		{
+			"libelle": "COMPLET BIO",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 2.45,
+			"net": 4.9,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "ROUSSITANE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.2,
+			"net": 1.2,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "EAU PLATE 50CL",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.5,
+			"net": 1.5,
+			"groupe": "BOISSON",
+			"famille": "BOISSON",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "ROUSSITANE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.2,
+			"net": 1.2,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1,
+			"net": 1,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "FOUGASSE GROTILLONS PATE A PAIN",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.7,
+			"net": 2.7,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		},
+		{
+			"libelle": "FICELLE LARDONS",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.45,
+			"net": 1.45,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "FICELLE OLIVES",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.45,
+			"net": 1.45,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "PEPSI MAX 50CL",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.5,
+			"net": 2.5,
+			"groupe": "BOISSON",
+			"famille": "BOISSON",
+			"hca": "N"
+		}
+	],
+	
+	"article": [
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1,
+			"net": 1,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+
+		{
+			"libelle": "SACRISTAIN",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 3.2,
+			"net": 3.2,
+			"groupe": "VIENNOISERIE",
+			"famille": "VIENNOISERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "EPEAUTRE BIO",
+			"annulation": "N",
+			"quantite": 3,
+			"brut": 2.45,
+			"net": 3.68,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "PAVE AUX GRAINES BIO",
+			"annulation": "N",
+			"quantite": 3,
+			"brut": 2.7,
+			"net": 4.05,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "GRAINES \u0026 FORME",
+			"annulation": "N",
+			"quantite": 3,
+			"brut": 2.5,
+			"net": 3.75,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "GRILLADOU",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 2.1,
+			"net": 2.1,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		}
+		
+	],
+	"article": [
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 1,
+			"net": 1,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "ROUSSITANE",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 1.2,
+			"net": 1.2,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "FOUGASSE GROTILLONS PATE A PAIN",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.7,
+			"net": 1.35,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "BAGUETTE",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 0.95,
+			"net": 1.9,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "PIZZA",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 2.2,
+			"net": 2.2,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1,
+			"net": 0.5,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 2,
+			"brut": 1,
+			"net": 1,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "ROUSSITANE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.2,
+			"net": 0.6,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "SANDWICH BEURRE JAMBON/SAUC.",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 4.3,
+			"net": 4.3,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		},
+		{
+			"libelle": "SANDWICH GARNI",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 4.9,
+			"net": 4.9,
+			"groupe": "TRAITEUR",
+			"famille": "TRAITEUR",
+			"hca": "N"
+		},
+		{
+			"libelle": "CROISSANT PUR BEURRE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1.2,
+			"net": 1.2,
+			"groupe": "VIENNOISERIE",
+			"famille": "VIENNOISERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "BAGUETTE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 0.95,
+			"net": 0.95,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	],
+	"article": [
+		{
+			"libelle": "CARACTERE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 1,
+			"net": 1,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		},
+		{
+			"libelle": "FICELLE",
+			"annulation": "N",
+			"quantite": 1,
+			"brut": 0.65,
+			"net": 0.65,
+			"groupe": "BOULANGERIE",
+			"famille": "BOULANGERIE",
+			"hca": "N"
+		}
+	]
