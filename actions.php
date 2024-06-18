@@ -6,23 +6,25 @@ if(isset($_POST['submit'])) {
     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $descr = filter_input(INPUT_POST, "descr", FILTER_DEFAULT);
-    $image = $_FILES['image_path'];
     $image_name = filter_input(INPUT_POST, "image_name", FILTER_DEFAULT);
+    //$_SESSION['msg'] = var_dump($_FILES);
 
     if(isset($_FILES['image_path']) && $_FILES['image_path'] != NULL  && $_POST['name'] != NULL) {
-        $path = "../uploads"; 
+        //$file= $_FILES['image_path'];
+        $path = "uploads"; 
         $extensions_valides = array('jpg', 'JPG', 'png', 'PNG'); 
-        $extension_upload = substr(strrchr($_FILES['photo']['name'],'.'),1);
+        $extension_upload = substr(strrchr($_FILES['image_path']['name'],'.'),1);
         
         if(in_array($extension_upload, $extensions_valides)) {  // l'extension est ok 
             $image_name = $image_name.'.'.$extension_upload;
             $path = $path."/".$image_name;       
-            $resultat = move_uploaded_file($_FILES['photo']['tmp_name'], $path);  // on envoie le fichier
+            $resultat = move_uploaded_file($_FILES['image_path']['tmp_name'], $path);  // on envoie le fichier
 
-            if($name && $price && $descr && $image && $image_name) {
-                $lastId = insertProduct($name, $descr, $image, $image_name, $price);
+            if($name && $price && $descr && $path && $image_name) {
+                $lastId = insertProduct($name, $descr, $path, $image_name, $price);
                 echo $lastId;
-                $_SESSION['msg'] = "Produit ajouté !";
+                //var_dump($file);
+                $_SESSION['msg'] = "Produit ajouté";
                 header("Location:admin.php");
                 die;
             } else {
@@ -74,4 +76,4 @@ else $_SESSION['msg'] = "Casse-toi, sale pirate du dimanche !";
 
 
 
-header("Location:index.php");
+header("Location:admin.php");

@@ -50,7 +50,7 @@ $products = findAll();
             <div class="col mb-3">
                 <div class="card h-100 border border-primary-bg-subtle bg-transparent pt-3" data-bs-theme="dark">
                     <img src="<?= $res['image_path'] ?>" class="card-img-top mx-auto" alt="<?= $res['name'] ?>" style="height: 12vw; width: auto">
-                    <div class="card-body border border-primary-bg-subtle"  >
+                    <div class="card-body border border-primary-bg-subtle border-top border-primary-bg-subtle border-end-0 border-start-0">
                         <a href="product.php?product=<?= $res['id'] ?>">
                             <h5 class="card-title text-capitalize text-secondary" style="text-decoration: underline; text-decoration-color: white;"><?= strtolower($res['name']) ?></h5>
                         </a>
@@ -58,7 +58,7 @@ $products = findAll();
                         </p>
                     </div>
                     <div class="card-footer text-center text-light border border-primary-bg-subtle bg-primary-subtle" data-bs-theme="dark">
-                    <p class="card-text fw-bold text-end h1 pb-3"><?= number_format($res['price'], 2, ",", "&nbsp;") . "&nbsp;€" ?></p>
+                    <p class="card-text fw-bold text-end h1 pb-3"><?= number_format(floatval($res['price']), 2, ",", "&nbsp;") . "&nbsp;€" ?></p>
                         <a href="actions.php?action=addCart&id=<?= $res['id'] ?>" type="button" class="btn btn-outline-light">Ajouter au panier</a>
                     </div>
                 </div>

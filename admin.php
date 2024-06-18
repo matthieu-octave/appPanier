@@ -20,10 +20,38 @@ require 'required.php';
 </head>
 
 <body>
-<?php include 'nav.php' ?>
+
+<?php
+    include 'nav.php';
+    
+    if($msg = afficherMsg()){?>
+            <div class="modal" id="myModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><?= $msg ?></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                window.addEventListener('load', ()=>{
+                    myModal.show();
+                }) 
+            </script>
+            <?php
+        }
+?>
     <div class="container">
         <h1 class="text-center">Ajout produit</h1>
-        <form action="actions.php" method="post" class="text-center mt-5 border-primary-subtle" data-bs-theme="dark">
+        <form enctype="multipart/form-data" action="actions.php" method="post" class="text-center mt-5 border-primary-subtle" data-bs-theme="dark">
             <p>
                 <label class="form-label w-100">Nom du produit :
                     <input type="text" class="form-control bg-transparent text-dark" name="name">
@@ -57,35 +85,7 @@ require 'required.php';
                 <input type="submit" class="btn bg-primary-subtle text-light" name="submit" value="Ajouter le produit" data-bs-theme="dark">
             </p>
         </form>
-    </div>
-    </div>
-    <?php
-        if($msg = afficherMsg()){
-            ?>
-            <div class="modal" id="myModal" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Message</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><?= $msg ?></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script>
-                window.addEventListener('load', ()=>{
-                    myModal.show();
-                }) 
-            </script>
-            <?php
-        }
-    ?>
+    </div>    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">

@@ -27,20 +27,21 @@ function findOneById($id) {
 	return $response -> fetch(PDO::FETCH_ASSOC);
 }
 
-function insertProduct($name, $descr, $image, $price) {
-    if(!isset($image) || empty($image)) {
-        $image = "img/placeholder.png";
+function insertProduct($name, $descr, $path, $image_name, $price) {
+    if(!isset($pat) || empty($path)) {
+        $$path = "img/placeholder.png";
     }
 
     $conn = dbConnect();
     $stmt= $conn-> prepare("INSERT INTO products 
-                                        (name, description, image, price) 
+                                        (name, description, image_path, image_name, price) 
                                         VALUES 
-                                        (:name, :descr, :image, :price)");
+                                        (:name, :descr, :image_path, :image_name, :price)");
                 
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
     $stmt->bindParam(':descr', $descr, PDO::PARAM_STR);
-    $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+    $stmt->bindParam(':image_path', $path, PDO::PARAM_STR);
+    $stmt->bindParam(':image_name', $image_name, PDO::PARAM_STR);
     $stmt->bindParam(':price', $price, PDO::PARAM_STR);
     
     $stmt->execute();
@@ -63,7 +64,7 @@ function cartQty() {
 function addToCart($id) {
     $product = findOneById($id);
     $product_name = $product['name'];
-    $price = $product['price'];
+    $price = floatval($product['price']);
     $image = $product['image_path'];
     $quantity = 1;
     $row_total = $price * $quantity;
