@@ -2,7 +2,6 @@
 require 'required.php';
 $cartId = time();
 $_SESSION['cartId'] = $cartId;
-
 $products = findAll();
 ?>
 <!DOCTYPE html>
@@ -18,17 +17,40 @@ $products = findAll();
 </head>
 
 <body>
-    <?php include 'nav.php' ?>
+    <?php include 'nav.php';
+    
+    if(empty($_GET)){
+        echo "";
+    } else {
+      $msg = $_SESSION['msg'];
+    ?>
+            <div class="modal" id="myModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><?= $msg ?></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                window.addEventListener('load', ()=>{
+                    myModal.show();
+                }) 
+            </script>
+            <?php
+    }
+?>
     <div class="container">
         <h1 class="text-center">Accueil</h1>
-        <h3 class="text-center text-info">
-            <?php if (empty($_GET)) {
-                echo "";
-            } else {
-                echo  $_SESSION['msg'];
-            }
-            ?>
-        </h3>
+
         <?php
         $row_cols = '<div class="row row-cols-1 row-cols-lg-3 p-3">';
         $counter = 0;
@@ -74,5 +96,7 @@ $products = findAll();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
-
+<script>
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+    </script>
 </html>

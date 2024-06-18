@@ -51,34 +51,34 @@ require 'required.php';
 ?>
     <div class="container">
         <h1 class="text-center">Ajout produit</h1>
-        <form enctype="multipart/form-data" action="actions.php" method="post" class="text-center mt-5 border-primary-subtle" data-bs-theme="dark">
+        <form enctype="multipart/form-data" action="actions.php" method="post" class="text-center mt-5" data-bs-theme="dark">
             <p>
                 <label class="form-label w-100">Nom du produit :
-                    <input type="text" class="form-control bg-transparent text-dark" name="name">
+                    <input type="text" class="form-control bg-transparent text-dark border border-primary-bg-subtle" name="name">
                 </label>
             </p>
 
             <p>
                 <label class="form-label w-100">Nom de l'image :
-                    <input type="text" class="form-control bg-transparent text-dark" name="image_name">
+                    <input type="text" class="form-control bg-transparent text-dark border border-primary-bg-subtle" name="image_name">
                 </label>
             </p>
 
             <p>
             <label for="formFile" class="form-label w-100">Choisissez une image (jpg, png)
-                <input class="form-control bg-light text-dark" type="file" id="formFile" name="image_path">
+                <input class="form-control bg-light text-dark border border-primary-bg-subtle" type="file" id="formFile" name="image_path">
             </label>
             </p>
             
             <p>
                 <label class="form-label w-100">Prix du produit :
-                    <input type="number" class="form-control bg-transparent text-dark" step="any" name="price">
+                    <input type="number" class="form-control bg-transparent text-dark border border-primary-bg-subtle" step="any" name="price">
                 </label>
             </p>
 
             <p>
                 <label class="form-label w-100">Description :
-                    <textarea class="form-control bg-transparent text-dark" name="descr" rows="3"></textarea>
+                    <textarea class="form-control bg-transparent text-dark border border-primary-bg-subtle" name="descr" rows="3"></textarea>
                 </label>
             </p>
             <p>

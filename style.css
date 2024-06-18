@@ -4,3 +4,8 @@
     border: 0;
     width: 100px;
 }
+
+.form-control::file-selector-button  {
+    background-color: var(--bs-primary-bg-subtle);
+    border-color: var(--bs-primary-bg-subtle);
+}

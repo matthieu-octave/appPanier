@@ -67,7 +67,7 @@ else if (isset($_GET['action'])){
                 $_SESSION['msg'] = "Produit ajouté !";
             }
             else $_SESSION['msg'] = "Formulaire mal rempli !";
-            header("Location:cart.php?showMsg");
+            header("Location:index.php?showMsg");
             die;
         break;
     }
